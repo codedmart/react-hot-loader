@@ -56,7 +56,7 @@ module.exports = function plugin(args) {
     }
   }
 
-  const REGISTRATIONS = Symbol();
+  const REGISTRATIONS = typeof Symbol === 'function' ? Symbol() : 'REGISTRATIONS_SYMBOL_CONSTANT';
   return {
     visitor: {
       ExportDefaultDeclaration(path, { file }) {
